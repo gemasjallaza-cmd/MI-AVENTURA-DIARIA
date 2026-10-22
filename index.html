@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#7357d8">
+<meta name="description" content="La aventura diaria de Alizee: misiones, estrellas y recompensas.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Alizee · Mi aventura diaria · PIN adulto</title>
+<style>
+:root{--ink:#27233b;--muted:#77728e;--purple:#7357d8;--lilac:#eee9ff;--pink:#ffdeea;--mint:#d8f7e8;--gold:#ffe8a8;--paper:#fffdfb;--line:#ece8f3;--shadow:0 12px 32px #3b28620d}
+*{box-sizing:border-box}body{margin:0;background:#f7f4fc;color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:14px;padding:11px 15px;font-weight:750;transition:.15s}button:active{transform:scale(.98)}.primary{background:var(--purple);color:white}.soft{background:var(--lilac);color:var(--purple)}.plain{background:#f4f1f8;color:var(--ink)}.danger{background:#ffebee;color:#a12d49}
+header{background:linear-gradient(125deg,#7357d8,#a98ce9);color:white;padding:22px max(18px,calc((100vw - 1050px)/2));border-radius:0 0 28px 28px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-size:13px;letter-spacing:.13em;font-weight:900;opacity:.9}.title{font-size:clamp(26px,5vw,39px);font-weight:900;line-height:1.08;margin:7px 0}.sub{opacity:.9;max-width:600px}.mode{display:flex;gap:6px;background:#ffffff2a;padding:5px;border-radius:16px}.mode button{background:transparent;color:white}.mode button.active{background:white;color:var(--purple)}
+main{max-width:1050px;margin:22px auto;padding:0 16px 40px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:14px;margin-bottom:16px}.panel,.task,.reward{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}.welcome{background:linear-gradient(130deg,#fff,#f0ebff)}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--muted)}h2{font-size:21px;margin:4px 0 10px}h3{font-size:17px;margin:0 0 7px}.big{font-size:38px;font-weight:950;color:var(--purple);line-height:1.1}.progress{height:10px;border-radius:20px;background:#e9e3f6;overflow:hidden;margin:12px 0 5px}.progress span{display:block;height:100%;background:linear-gradient(90deg,#8b6be7,#f2a5ce);width:0;transition:width .3s}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:24px 2px 12px}.section-head p{margin:0;color:var(--muted);font-size:14px}.tasks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.task{position:relative;overflow:hidden}.task.locked{opacity:.62;background:#f6f3fa}.task.done{border-color:#b9ebd1}.task.pending{border-color:#e9cf77}.task-top{display:flex;align-items:flex-start;gap:12px}.emoji{width:48px;height:48px;border-radius:16px;background:var(--lilac);display:grid;place-items:center;font-size:25px;flex-shrink:0}.task:nth-child(3n+2) .emoji{background:var(--pink)}.task:nth-child(3n) .emoji{background:var(--mint)}.task p{margin:0 0 12px;color:var(--muted);font-size:14px}.task-title{font-weight:900;font-size:17px}.tag{display:inline-flex;border-radius:99px;padding:5px 9px;font-size:12px;font-weight:800;background:#f0edf6;color:#6d6580;margin:0 0 12px}.tag.done{background:var(--mint);color:#18734b}.tag.pending{background:var(--gold);color:#7b5b00}.task-actions{display:flex;gap:7px;flex-wrap:wrap}.task-actions button{font-size:13px;padding:9px 11px}.task input[type=file]{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.small{font-size:12px;color:var(--muted)}.evidence{margin-top:12px;border-radius:14px;background:#f7f4fc;padding:10px}.evidence img{width:100%;max-height:180px;object-fit:contain;border-radius:10px;display:block;margin-top:8px}.empty{text-align:center;padding:24px;color:var(--muted)}.reward-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.reward{box-shadow:none;padding:14px}.reward .emoji{margin-bottom:9px}.reward.unlocked{background:#fff9e7;border-color:#f3d77f}.parent-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:5px;margin:10px 0}.field label{font-size:13px;font-weight:800;color:#5e5872}.field input,.field textarea,.field select{width:100%;border:1px solid #ddd6eb;border-radius:12px;padding:10px;background:white;color:var(--ink)}.field textarea{min-height:70px;resize:vertical}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.parent-task{border-top:1px solid var(--line);padding:13px 0}.parent-task:first-child{border-top:0}.parent-task-head{display:flex;justify-content:space-between;gap:10px;align-items:center}.parent-task p{color:var(--muted);font-size:13px;margin:5px 0}.footer-note{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}.hidden{display:none!important}.pin-overlay{position:fixed;inset:0;background:#211a37b8;display:grid;place-items:center;padding:18px;z-index:30}.pin-card{width:min(100%,390px);background:var(--paper);border-radius:24px;padding:24px;box-shadow:0 24px 80px #0003;text-align:center}.pin-icon{font-size:36px}.pin-card h2{margin:8px 0}.pin-card p{color:var(--muted)}.pin-card input{display:block;width:100%;margin:12px 0;padding:13px;border:1px solid #ddd6eb;border-radius:12px;text-align:center;letter-spacing:.18em}.pin-actions{display:flex;gap:10px;justify-content:center;margin:14px 0}.pin-actions button{flex:1}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#29243e;color:white;padding:12px 18px;border-radius:14px;box-shadow:0 8px 30px #0002;z-index:10;max-width:90vw}
+@media(max-width:680px){.hero{grid-template-columns:1fr}.tasks{grid-template-columns:1fr}.reward-grid{grid-template-columns:1fr}.parent-grid{grid-template-columns:1fr}.title{font-size:29px}header{padding:20px 16px}main{margin-top:14px}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top">
+  <div><div class="brand">ALIZEE · MISIÓN DEL DÍA</div><div class="title">Mi aventura diaria ✨</div><div class="sub">Pequeños pasos, grandes poderes. Cada misión completada te acerca a una nueva recompensa.</div></div>
+  <div class="mode" role="group" aria-label="Cambiar vista"><button id="childTab" class="active" onclick="setMode('child')">🌈 Alizee</button><button id="parentTab" onclick="openParentAccess()">🔒 Mamá / Papá</button></div>
+ </div>
+</header>
+<main>
+ <section class="panel" style="margin-bottom:16px">
+  <h2 style="margin-top:0">☁️ Guardado seguro de la aventura</h2>
+  <p class="small" id="cloudStatus">Inicia sesión para sincronizar la rutina entre dispositivos.</p>
+  <form id="cloudLoginForm">
+   <div class="form-row"><div class="field"><label for="cloudEmail">Correo de mamá</label><input id="cloudEmail" type="email" autocomplete="username" required placeholder="Tu correo de Firebase"></div><div class="field"><label for="cloudPassword">Contraseña de Firebase</label><input id="cloudPassword" type="password" autocomplete="current-password" required placeholder="Contraseña de tu cuenta"></div></div>
+   <div class="task-actions"><button type="submit" class="primary" id="cloudLoginButton">Conectar y sincronizar</button><button type="button" class="plain hidden" id="cloudLogoutButton">Cerrar sesión</button></div>
+  </form>
+  <p class="small">Usa el correo y la contraseña del usuario que creaste en Firebase Authentication. No son el PIN del panel de mamá.</p>
+ </section>
+ <section id="childView">
+  <div class="hero">
+   <div class="panel welcome"><div class="eyebrow">¡Hola, exploradora!</div><h2 id="hello">Hoy puedes con pequeñas grandes cosas.</h2><div id="progressText">0 de 4 misiones aprobadas</div><div class="progress"><span id="progressBar"></span></div><div class="small">📸 Cuando termines una misión, sube una foto. Mamá la revisará antes de darte la estrella.</div></div>
+   <div class="panel"><div class="eyebrow">Tus estrellas</div><div class="big" id="stars">0 ⭐</div><div class="small">Las estrellas se ganan cuando mamá aprueba la evidencia.</div><div style="margin-top:13px"><span class="tag" id="levelTag">Nivel 1 · Exploradora</span></div><div class="small" style="margin-top:10px" id="childLedger">Esta semana: 0 ganadas · 0 gastadas</div></div>
+  </div>
+  <div class="section-head"><div><h2>Misiones de hoy</h2><p>Una misión a la vez: termina, envía tu foto y espera la revisión.</p></div></div>
+  <div id="taskList" class="tasks"></div>
+  <div class="section-head"><div><h2>✨ Misiones especiales</h2><p>Se desbloquean cuando tienes al menos 5 estrellas principales. Elige cuál quieres intentar.</p></div></div><div id="specialList" class="tasks"></div>
+  <div class="section-head"><div><h2>📚 Mis deberes con fecha</h2><p>¡Adelantar una tarea también puede ganar estrellas extra!</p></div></div><div id="homeworkList" class="tasks"></div>
+  <div class="section-head"><div><h2>🎁 Mi vitrina de recompensas</h2><p>Las recompensas se desbloquean con las estrellas que ganes.</p></div></div>
+  <div id="rewardList" class="reward-grid"></div>
+ </section>
+ <section id="parentView" class="hidden">
+  <div class="hero">
+   <div class="panel welcome"><div class="eyebrow">Panel de mamá</div><h2>Tu acompañamiento desbloquea la aventura 💜</h2><p class="small">Revisa cada evidencia personalmente. Solo al aprobarla se completa la misión y se habilita la siguiente.</p></div>
+   <div class="panel"><div class="eyebrow">Resumen de misiones</div><div class="big" id="parentSummary">0 / 4</div><div class="small" id="pendingSummary">No hay evidencias pendientes.</div><hr style="border:0;border-top:1px solid var(--line);margin:12px 0"><div class="eyebrow">Balance de estrellas</div><div id="starLedger" style="font-weight:800;margin-top:6px">Saldo: 0 ⭐</div><div class="small" id="weeklyLedger">Esta semana: 0 ganadas · 0 gastadas</div><div class="small" id="allTimeLedger">Histórico: 0 ganadas · 0 gastadas</div></div>
+  </div>
+  <div class="parent-grid">
+   <div class="panel">
+    <div class="eyebrow">Diseña la rutina</div><h2>Misiones principales y especiales</h2><div class="field"><label for="newType">Tipo de misión</label><select id="newType"><option value="main">Principal (rutina diaria)</option><option value="special">Especial (se desbloquea con 5 estrellas)</option></select></div>
+    <div class="field"><label for="newTitle">Nombre de la misión</label><input id="newTitle" placeholder="Ej. Preparar la mochila"></div>
+    <div class="field"><label for="newDesc">Descripción para Alizee</label><textarea id="newDesc" placeholder="¿Qué debe hacer? Explicado de forma sencilla."></textarea></div>
+    <div class="form-row"><div class="field"><label for="newEmoji">Icono / emoji</label><input id="newEmoji" maxlength="5" value="🌟"></div><div class="field"><label for="newStars">Estrellas al aprobar</label><input id="newStars" type="number" min="1" max="10" value="1"></div></div>
+    <button class="primary" onclick="addTask()">＋ Añadir misión</button>
+    <div class="small" style="margin-top:8px">El orden de la lista determina qué misión se desbloquea después.</div>
+    <div id="parentTaskList" style="margin-top:14px"></div><hr style="border:0;border-top:1px solid var(--line);margin:18px 0"><h2>📚 Deberes escolares</h2><div class="field"><label for="hwTitle">Tarea</label><input id="hwTitle" placeholder="Ej. Valores: preguntas 1–5"></div><div class="form-row"><div class="field"><label for="hwDue">Fecha de entrega</label><input id="hwDue" type="date"></div><div class="field"><label for="hwStars">Estrellas extra al adelantar</label><input id="hwStars" type="number" min=1 max=10 value=2></div></div><button class="soft" onclick="addHomework()">＋ Añadir deber</button><div id="parentHomeworkList"></div>
+   </div>
+   <div class="panel">
+    <div class="eyebrow">Recompensas</div><h2>¿Por qué ahorra estrellas?</h2>
+    <div class="field"><label for="rewardName">Nombre de la recompensa</label><input id="rewardName" placeholder="Ej. Elegir una película"></div>
+    <div class="form-row"><div class="field"><label for="rewardEmoji">Icono</label><input id="rewardEmoji" maxlength="5" value="🎬"></div><div class="field"><label for="rewardCost">Estrellas necesarias</label><input id="rewardCost" type="number" min="1" value="5"></div></div>
+    <button class="soft" onclick="addReward()">＋ Añadir recompensa</button>
+    <div id="parentRewardList" style="margin-top:14px"></div>
+    <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+    <h3>Privacidad y datos</h3><p class="small">Este prototipo guarda los datos y fotos en este navegador y dispositivo. No se suben a un servidor. Usa fotos apropiadas y evita incluir información privada.</p>
+    <button class="plain" onclick="exportData()">⬇ Exportar copia de rutina</button>
+    <button class="danger" onclick="resetDay()">Reiniciar progreso de hoy</button>
+   </div>
+  </div>
+ </section>
+ <div class="footer-note">Mi aventura diaria · La copia local se conserva; cuando inicias sesión, los cambios se sincronizan con Firebase.</div>
+</main>
+<div id="pinOverlay" class="pin-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="pinTitle">
+ <div class="pin-card">
+  <div class="pin-icon">🔐</div><h2 id="pinTitle">Panel de adultos</h2>
+  <p id="pinMessage">Introduce tu PIN para continuar.</p>
+  <form id="pinForm">
+   <input id="pinInput" type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" autocomplete="current-password" placeholder="PIN de 4 a 8 dígitos" required>
+   <input id="pinConfirm" class="hidden" type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" autocomplete="new-password" placeholder="Repite el PIN">
+   <div class="pin-actions"><button type="button" class="plain" onclick="closePin()">Cancelar</button><button type="submit" class="primary" id="pinSubmit">Continuar</button></div>
+  </form>
+  <p class="small">El PIN protege el acceso casual en este dispositivo. No sustituye la seguridad de una cuenta en línea.</p>
+ </div>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBKAmoakVQvtDwbBBVoaiFqvGTIfb_PCYo",
+  authDomain: "mi-aventura-diaria.firebaseapp.com",
+  projectId: "mi-aventura-diaria",
+  storageBucket: "mi-aventura-diaria.firebasestorage.app",
+  messagingSenderId: "605227622800",
+  appId: "1:605227622800:web:96a995b73cf48e18f95315"
+};
+let firebaseAuth=null, firebaseDb=null, signedInUser=null, cloudReady=false, cloudSaveTimer=null;
+try { firebase.initializeApp(firebaseConfig); firebaseAuth=firebase.auth(); firebaseDb=firebase.firestore(); } catch(e) { console.error('Firebase init:',e); }
+const KEY='alizee_adventure_v2';
+function getWeekKey(d=new Date()){const x=new Date(d);x.setHours(0,0,0,0);const day=(x.getDay()+6)%7;x.setDate(x.getDate()-day);return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')}
+const defaults=()=>({
+ tasks:[
+ {id:uid(),title:'Tender mi cama',desc:'Deja tu cama lo más ordenada que puedas.',emoji:'🛏️',stars:1,type:'main',status:'ready',photo:'',note:''},
+ {id:uid(),title:'Hacer mis deberes',desc:'Avanza tus tareas con atención y pide ayuda si la necesitas.',emoji:'✏️',stars:2,type:'main',status:'locked',photo:'',note:''},
+ {id:uid(),title:'Ordenar mis cosas',desc:'Guarda los materiales y juguetes en su lugar.',emoji:'🧸',stars:1,type:'main',status:'locked',photo:'',note:''},
+ {id:uid(),title:'Prepararme para mañana',desc:'Deja lista la mochila o la ropa que vas a necesitar.',emoji:'🎒',stars:1,type:'main',status:'locked',photo:'',note:''}
+ ],
+ rewards:[
+ {id:uid(),title:'Elegir una película',emoji:'🎬',cost:5},
+ {id:uid(),title:'Tiempo especial con mamá',emoji:'💗',cost:8},
+ {id:uid(),title:'Elegir una actividad divertida',emoji:'🎨',cost:12}
+ ],stars:0,specialStars:0,totalEarned:0,totalSpent:0,weekEarned:0,weekSpent:0,weekKey:getWeekKey(),redeemed:[],day:new Date().toLocaleDateString('es-BO'),homework:[]
+});
+function uid(){return 'id'+Math.random().toString(36).slice(2,10)}
+let data;
+try{data=JSON.parse(localStorage.getItem(KEY))||defaults()}catch(e){data=defaults()}
+if(!data.tasks||!data.rewards)data=defaults();
+data.homework=data.homework||[];data.specialStars=Number(data.specialStars)||0;data.tasks.forEach(t=>{t.type=t.type||'main';if(t.type==='extra')t.type='special'});
+data.totalEarned=Number(data.totalEarned)||0;data.totalSpent=Number(data.totalSpent)||0;data.weekEarned=Number(data.weekEarned)||0;data.weekSpent=Number(data.weekSpent)||0;data.weekKey=data.weekKey||getWeekKey();
+function checkWeek(){const now=getWeekKey();if(data.weekKey!==now){data.weekKey=now;data.weekEarned=0;data.weekSpent=0}}
+function save(){checkWeek();try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){toast('El navegador se quedó sin espacio. Prueba una foto más pequeña.')}render();if(signedInUser&&cloudReady)scheduleCloudSave()}
+function setCloudStatus(message){const el=document.getElementById('cloudStatus');if(el)el.textContent=message}
+function scheduleCloudSave(){clearTimeout(cloudSaveTimer);cloudSaveTimer=setTimeout(saveCloudData,700)}
+async function saveCloudData(){if(!signedInUser||!cloudReady||!firebaseDb)return;try{const json=JSON.stringify(data);if(json.length>800000){setCloudStatus('No se pudo sincronizar: los datos y fotos superan el límite seguro de tamaño. Exporta una copia y reduce fotos.');toast('Hay demasiados datos/fotos para sincronizar de una vez.');return}await firebaseDb.collection('datos_app').doc(signedInUser.uid).set({data:data,updatedAt:firebase.firestore.FieldValue.serverTimestamp()});setCloudStatus('Conectada: cambios guardados en Firebase. Puedes abrir la app en otro dispositivo e iniciar sesión.')}catch(e){console.error(e);setCloudStatus('Sesión iniciada, pero Firebase no permitió guardar. Revisa las reglas de Firestore.');toast('No se pudo sincronizar. Revisa las reglas de Firestore.')}}
+async function handleCloudLogin(e){e.preventDefault();if(!firebaseAuth||!firebaseDb){toast('No pude iniciar Firebase. Comprueba tu conexión a internet.');return}const email=document.getElementById('cloudEmail').value.trim(),password=document.getElementById('cloudPassword').value;const btn=document.getElementById('cloudLoginButton');btn.disabled=true;btn.textContent='Conectando…';try{await firebaseAuth.signInWithEmailAndPassword(email,password)}catch(err){console.error(err);const messages={'auth/invalid-credential':'El correo o la contraseña no coinciden.','auth/invalid-email':'Revisa el formato del correo.','auth/too-many-requests':'Firebase bloqueó temporalmente los intentos. Espera un poco y prueba de nuevo.','auth/network-request-failed':'No hay conexión estable a internet.'};toast(messages[err.code]||('No se pudo iniciar sesión: '+err.message));setCloudStatus('No se pudo iniciar sesión. Revisa el correo y la contraseña.')}finally{btn.disabled=false;btn.textContent='Conectar y sincronizar'}}
+async function handleAuthState(user){signedInUser=user;cloudReady=false;const form=document.getElementById('cloudLoginForm'),logout=document.getElementById('cloudLogoutButton');if(!user){if(form)form.classList.remove('hidden');if(logout)logout.classList.add('hidden');setCloudStatus('Sin sesión: por ahora los cambios quedan guardados en este navegador.');return}if(form)form.classList.add('hidden');if(logout)logout.classList.remove('hidden');setCloudStatus('Cuenta conectada. Buscando la rutina guardada…');try{const ref=firebaseDb.collection('datos_app').doc(user.uid);const snap=await ref.get();if(snap.exists&&snap.data().data){data=snap.data().data;data.homework=data.homework||[];data.specialStars=Number(data.specialStars)||0;data.totalEarned=Number(data.totalEarned)||0;data.totalSpent=Number(data.totalSpent)||0;data.weekEarned=Number(data.weekEarned)||0;data.weekSpent=Number(data.weekSpent)||0;data.weekKey=data.weekKey||getWeekKey();data.redeemed=data.redeemed||[];try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}render();setCloudStatus('Rutina recuperada de Firebase. Los cambios nuevos se sincronizarán automáticamente.')}else{setCloudStatus('Aún no hay rutina en la nube. Subiendo la copia de este navegador…');cloudReady=true;await saveCloudData() }cloudReady=true;}catch(e){console.error(e);setCloudStatus('Cuenta conectada, pero no se pudo leer Firestore. Hay que revisar las reglas de seguridad.');toast('No se pudo cargar la nube. Tus datos locales siguen intactos.');cloudReady=false}}
+document.getElementById('cloudLoginForm').addEventListener('submit',handleCloudLogin);
+document.getElementById('cloudLogoutButton').addEventListener('click',async()=>{try{await firebaseAuth.signOut();cloudReady=false;toast('Sesión cerrada.')}catch(e){toast('No pude cerrar sesión.')}});
+if(firebaseAuth)firebaseAuth.onAuthStateChanged(handleAuthState);
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(s){let t=document.getElementById('toast');t.textContent=s;t.classList.remove('hidden');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.add('hidden'),2600)}
+let parentUnlocked=false,pinStage='login',firstPin='';
+function setMode(mode){if(mode==='parent'&&!parentUnlocked){openParentAccess();return}if(mode==='child')parentUnlocked=false;document.getElementById('childView').classList.toggle('hidden',mode!=='child');document.getElementById('parentView').classList.toggle('hidden',mode!=='parent');document.getElementById('childTab').classList.toggle('active',mode==='child');document.getElementById('parentTab').classList.toggle('active',mode==='parent');render()}
+async function pinDigest(pin){if(window.crypto&&crypto.subtle&&window.TextEncoder){const bytes=new TextEncoder().encode('alizee-adult-panel-v1:'+pin);const hash=await crypto.subtle.digest('SHA-256',bytes);return 'sha256:'+Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('')}let h=2166136261;for(const ch of 'alizee-adult-panel-v1:'+pin){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return 'fallback:'+((h>>>0).toString(16))}
+function openParentAccess(){if(parentUnlocked){setMode('parent');return}const overlay=document.getElementById('pinOverlay'),input=document.getElementById('pinInput'),confirmInput=document.getElementById('pinConfirm');pinStage=data.pinHash?'login':'create';document.getElementById('pinTitle').textContent=data.pinHash?'Panel de adultos':'Crea el PIN de mamá o papá';document.getElementById('pinMessage').textContent=data.pinHash?'Introduce tu PIN para revisar evidencias y editar la rutina.':'Elige un PIN de 4 a 8 números. Lo usarás para proteger este panel en este dispositivo.';confirmInput.classList.toggle('hidden',pinStage!=='create');input.value='';confirmInput.value='';input.autocomplete=pinStage==='create'?'new-password':'current-password';document.getElementById('pinSubmit').textContent=pinStage==='create'?'Guardar PIN':'Entrar';overlay.classList.remove('hidden');setTimeout(()=>input.focus(),50)}
+function closePin(){document.getElementById('pinOverlay').classList.add('hidden');document.getElementById('pinInput').value='';document.getElementById('pinConfirm').value=''}
+document.getElementById('pinForm').addEventListener('submit',async function(e){e.preventDefault();const input=document.getElementById('pinInput'),confirmInput=document.getElementById('pinConfirm'),pin=input.value;if(!/^\d{4,8}$/.test(pin)){toast('El PIN debe tener entre 4 y 8 números.');return}if(pinStage==='create'){if(pin!==confirmInput.value){toast('Los PIN no coinciden.');confirmInput.focus();return}data.pinHash=await pinDigest(pin);save();parentUnlocked=true;closePin();setMode('parent');toast('PIN creado. Panel protegido.');return}const digest=await pinDigest(pin);if(digest!==data.pinHash){toast('Ese PIN no coincide.');input.value='';input.focus();return}parentUnlocked=true;closePin();setMode('parent')});
+document.getElementById('pinOverlay').addEventListener('click',function(e){if(e.target===this)closePin()});
+function statusText(t){return t.status==='approved'?'Aprobada ✓':t.status==='pending'?'Esperando a mamá':t.status==='rejected'?'Necesita otro intento':t.status==='locked'?'Bloqueada 🔒':'Lista para empezar'}
+function render(){
+ checkWeek();
+ const mainTasks=data.tasks.filter(t=>t.type!=='special');const approved=mainTasks.filter(t=>t.status==='approved').length,total=mainTasks.length;
+ document.getElementById('progressText').textContent=`${approved} de ${total} misiones aprobadas`;
+ document.getElementById('progressBar').style.width=(total?approved/total*100:0)+'%';
+ document.getElementById('stars').textContent=data.stars+' ⭐';
+ const level=data.stars>=15?'Nivel 4 · Maestra':data.stars>=8?'Nivel 3 · Experta':data.stars>=4?'Nivel 2 · Valiente':'Nivel 1 · Exploradora';
+ document.getElementById('levelTag').textContent=level;
+ document.getElementById('childLedger').textContent=`Monedero especial: ${data.specialStars} ⭐ · Esta semana: ${data.weekEarned} ganadas · ${data.weekSpent} gastadas`;
+ document.getElementById('starLedger').textContent=`Saldo principal: ${data.stars} ⭐ · Monedero especial: ${data.specialStars} ⭐`;
+ document.getElementById('weeklyLedger').textContent=`Esta semana: ${data.weekEarned} ⭐ ganadas · ${data.weekSpent} ⭐ gastadas`;
+ document.getElementById('allTimeLedger').textContent=`Histórico: ${data.totalEarned} ⭐ ganadas · ${data.totalSpent} ⭐ gastadas`;
+ document.getElementById('taskList').innerHTML=data.tasks.filter(t=>t.type!=='special').map((t,i)=>`<article class="task ${t.status==='approved'?'done':''} ${t.status==='pending'?'pending':''} ${t.status==='locked'?'locked':''}"><div class="task-top"><div class="emoji">${esc(t.emoji||'🌟')}</div><div style="flex:1;min-width:0"><div class="task-title">${i+1}. ${esc(t.title)}</div><p>${esc(t.desc)}</p></div></div><span class="tag ${t.status==='approved'?'done':t.status==='pending'?'pending':''}">${statusText(t)}</span><div class="small">Premio: ${t.stars} ⭐</div>${t.status==='pending'||t.status==='approved'?`<div class="evidence"><strong>Tu evidencia</strong>${t.photo?`<img src="${t.photo}" alt="Foto de evidencia">`:'<p class="small">No hay foto adjunta.</p>'}${t.note?`<p>${esc(t.note)}</p>`:''}</div>`:''}<div class="task-actions">${t.status==='ready'||t.status==='rejected'?`<label class="soft" style="display:inline-block;border-radius:14px;padding:9px 11px;font-weight:800;font-size:13px;cursor:pointer">📸 ${t.status==='rejected'?'Enviar otra foto':'Subir evidencia'}<input type="file" accept="image/*" capture="environment" onchange="uploadPhoto('${t.id}',this)"></label>`:''}${t.status==='approved'?'<span class="small">¡Lo lograste! Sigue con la próxima misión. ✨</span>':''}${t.status==='locked'?'<span class="small">Completa la misión anterior y espera su aprobación.</span>':''}</div></article>`).join('')||'<div class="empty">Mamá aún no ha añadido misiones.</div>';
+ document.getElementById('specialList').innerHTML=data.tasks.filter(t=>t.type==='special').map(t=>{let can=data.stars>=5;return `<article class="task ${t.status==='approved'?'done':''} ${t.status==='pending'?'pending':''}"><div class="task-top"><div class="emoji">${esc(t.emoji||'✨')}</div><div><div class="task-title">${esc(t.title)}</div><p>${esc(t.desc)}</p></div></div><div class="small">Recompensa: ${t.stars} ⭐ especiales · ${can?'Disponible':'Necesitas al menos 5 ⭐ principales'}</div>${t.status==='pending'?'<span class="tag pending">Esperando a mamá</span>':''}${t.status==='approved'?'<span class="tag done">Completada</span>':''}${can&&(t.status==='ready'||t.status==='rejected')?`<label class="soft" style="display:inline-block;padding:9px;border-radius:12px;cursor:pointer">📸 Enviar evidencia<input type="file" accept="image/*" capture="environment" onchange="uploadPhoto('${t.id}',this)"></label>`:''}</article>`}).join('')||'<div class="empty">Mamá puede añadir misiones especiales desde su panel.</div>';
+ document.getElementById('homeworkList').innerHTML=data.homework.map(h=>`<article class="task"><div class="task-title">📚 ${esc(h.title)}</div><p>Entrega: ${esc(h.due||'Sin fecha')}</p><div class="small">Premio por adelantar: ${h.stars} ⭐ especiales · ${h.done?'Adelantada ✓':'Pendiente'}</div>${!h.done?`<button class="soft" onclick="submitHomework('${h.id}')">Ya la adelanté</button>`:''}</article>`).join('')||'<div class="empty">Todavía no hay deberes añadidos.</div>';
+ document.getElementById('parentHomeworkList').innerHTML=data.homework.map(h=>`<div class="parent-task"><strong>${esc(h.title)}</strong><p>Entrega: ${esc(h.due||'Sin fecha')} · ${h.stars} ⭐ extra · ${h.done?'Adelantada':'Pendiente'}</p><div class="task-actions">${!h.done?`<button class="primary" onclick="approveHomework('${h.id}')">Aprobar adelanto</button>`:''}<button class="danger" onclick="deleteHomework('${h.id}')">Eliminar</button></div></div>`).join('');
+ document.getElementById('rewardList').innerHTML=data.rewards.map(r=>{let can=data.specialStars>=r.cost,redeemed=data.redeemed.includes(r.id);return `<article class="reward ${can?'unlocked':''}"><div class="emoji">${esc(r.emoji||'🎁')}</div><h3>${esc(r.title)}</h3><div class="small">${r.cost} ⭐ ${redeemed?'· ¡Canjeada!':can?'· ¡Ya puedes pedirla!':'· Te faltan '+(r.cost-data.stars)+' ⭐'}</div>${can&&!redeemed?`<button class="soft" style="margin-top:10px" onclick="requestReward('${r.id}')">Pedir recompensa</button>`:''}</article>`}).join('');
+ document.getElementById('parentSummary').textContent=`${approved} / ${total}`;
+ let pend=data.tasks.filter(t=>t.status==='pending').length;document.getElementById('pendingSummary').textContent=pend?`${pend} evidencia(s) esperan tu revisión.`:'No hay evidencias pendientes.';
+ document.getElementById('parentTaskList').innerHTML=data.tasks.map((t,i)=>`<div class="parent-task"><div class="parent-task-head"><strong>${i+1}. ${esc(t.emoji)} ${esc(t.title)}</strong><span class="tag ${t.status==='pending'?'pending':t.status==='approved'?'done':''}">${statusText(t)}</span></div><p>${esc(t.desc)} · ${t.stars} ⭐</p>${t.status==='pending'?`${t.photo?`<img src="${t.photo}" alt="Evidencia de ${esc(t.title)}" style="width:100%;max-height:220px;object-fit:contain;border-radius:12px;background:#f7f4fc">`:''}<div class="task-actions" style="margin-top:9px"><button class="primary" onclick="approve('${t.id}')">✓ Aprobar</button><button class="plain" onclick="reject('${t.id}')">↻ Pedir otro intento</button></div>`:''}<div class="task-actions" style="margin-top:8px"><button class="plain" onclick="editTask('${t.id}')">Editar</button><button class="danger" onclick="deleteTask('${t.id}')">Eliminar</button></div></div>`).join('')||'<p class="small">No hay misiones creadas.</p>';
+ document.getElementById('parentRewardList').innerHTML=data.rewards.map(r=>`<div class="parent-task"><div class="parent-task-head"><strong>${esc(r.emoji)} ${esc(r.title)}</strong><span class="tag">${r.cost} ⭐</span></div><div class="task-actions"><button class="plain" onclick="editReward('${r.id}')">Editar</button><button class="danger" onclick="deleteReward('${r.id}')">Eliminar</button></div></div>`).join('');
+}
+function uploadPhoto(id,input){const file=input.files&&input.files[0];if(!file)return;if(!file.type||!file.type.startsWith('image/')){toast('Elige una foto o imagen desde la galería.');input.value='';return}if(file.size>5*1024*1024){toast('La foto pesa más de 5 MB. Elige una más pequeña.');input.value='';return}const reader=new FileReader();reader.onerror=()=>{toast('No pude leer esa foto. Prueba otra imagen.');input.value=''};reader.onload=()=>{const img=new Image();img.onerror=()=>{toast('No pude abrir esa imagen. Prueba otra foto.');input.value=''};img.onload=()=>{try{const c=document.createElement('canvas');let w=img.naturalWidth||img.width,h=img.naturalHeight||img.height,max=700;if(!w||!h)throw new Error('Imagen vacía');if(w>h&&w>max){h=Math.round(h*max/w);w=max}else if(h>max){w=Math.round(w*max/h);h=max}c.width=w;c.height=h;const ctx=c.getContext('2d');if(!ctx)throw new Error('Canvas no disponible');ctx.drawImage(img,0,0,w,h);const t=data.tasks.find(x=>x.id===id);if(!t)throw new Error('Misión no encontrada');t.photo=c.toDataURL('image/jpeg',.55);t.status='pending';save();toast('¡Evidencia enviada! Mamá debe revisarla.')}catch(e){toast('No pude guardar la foto. Prueba una imagen JPG o PNG más pequeña.')}finally{input.value=''}};img.src=reader.result};reader.readAsDataURL(file)}
+function approve(id){let i=data.tasks.findIndex(t=>t.id===id),t=data.tasks[i];if(!t||t.status!=='pending')return;t.status='approved';const award=Number(t.stars)||1;if(t.type==='special'){data.specialStars+=award}else{data.stars+=award}data.totalEarned+=award;data.weekEarned+=award;let next=data.tasks.slice(i+1).find(x=>x.type==='main'&&x.status==='locked');if(t.type!=='special'&&next)next.status='ready';save();toast(t.type==='special'?'Misión especial aprobada. Estrellas al monedero especial.':'Misión aprobada. Se añadieron estrellas.')}
+function reject(id){let t=data.tasks.find(x=>x.id===id);if(!t)return;t.status='rejected';save();toast('Se puede enviar otra evidencia.')}
+function addTask(){let title=document.getElementById('newTitle').value.trim(),desc=document.getElementById('newDesc').value.trim();if(!title){toast('Escribe el nombre de la misión.');return}const type=document.getElementById('newType').value;data.tasks.push({id:uid(),title,desc,emoji:document.getElementById('newEmoji').value.trim()||'🌟',stars:Math.max(1,Math.min(10,Number(document.getElementById('newStars').value)||1)),type,status:type==='special'?'ready':(data.tasks.filter(t=>t.type==='main').length?'locked':'ready'),photo:'',note:''});document.getElementById('newTitle').value='';document.getElementById('newDesc').value='';save();toast('Nueva misión añadida.')}
+function editTask(id){let t=data.tasks.find(x=>x.id===id);if(!t)return;let title=prompt('Nombre de la misión:',t.title);if(title===null)return;if(!title.trim()){toast('El nombre no puede quedar vacío.');return}let desc=prompt('Descripción:',t.desc);if(desc===null)return;let emoji=prompt('Emoji:',t.emoji);if(emoji===null)return;let stars=prompt('Estrellas al aprobar (1–10):',t.stars);if(stars===null)return;t.title=title.trim();t.desc=desc.trim();t.emoji=emoji.trim()||'🌟';t.stars=Math.max(1,Math.min(10,Number(stars)||1));save()}
+function deleteTask(id){if(!confirm('¿Eliminar esta misión y su evidencia?'))return;data.tasks=data.tasks.filter(t=>t.id!==id);save()}
+function addReward(){let title=document.getElementById('rewardName').value.trim();if(!title){toast('Escribe el nombre de la recompensa.');return}data.rewards.push({id:uid(),title,emoji:document.getElementById('rewardEmoji').value.trim()||'🎁',cost:Math.max(1,Number(document.getElementById('rewardCost').value)||1)});document.getElementById('rewardName').value='';save();toast('Recompensa añadida.')}
+function editReward(id){let r=data.rewards.find(x=>x.id===id);if(!r)return;let title=prompt('Nombre:',r.title);if(title===null)return;let emoji=prompt('Emoji:',r.emoji);if(emoji===null)return;let cost=prompt('Estrellas necesarias:',r.cost);if(cost===null)return;r.title=title.trim()||r.title;r.emoji=emoji.trim()||'🎁';r.cost=Math.max(1,Number(cost)||1);save()}
+function deleteReward(id){if(!confirm('¿Eliminar esta recompensa?'))return;data.rewards=data.rewards.filter(r=>r.id!==id);data.redeemed=data.redeemed.filter(x=>x!==id);save()}
+function requestReward(id){let r=data.rewards.find(x=>x.id===id);if(!r||data.specialStars<r.cost||data.redeemed.includes(id))return;toast('¡Pídesela a mamá!');if(confirm(`¿Ya acordaste con mamá “${r.title}”? Se descontarán ${r.cost} estrellas especiales.`)){data.specialStars-=r.cost;data.totalSpent+=r.cost;data.weekSpent+=r.cost;data.redeemed.push(id);save();toast('¡Recompensa canjeada! Disfrútala 💗')}}
+function addHomework(){let title=document.getElementById('hwTitle').value.trim(),due=document.getElementById('hwDue').value,stars=Math.max(1,Math.min(10,Number(document.getElementById('hwStars').value)||1));if(!title){toast('Escribe el nombre del deber.');return}data.homework.push({id:uid(),title,due,stars,done:false});document.getElementById('hwTitle').value='';save();toast('Deber añadido.')}
+function submitHomework(id){let h=data.homework.find(x=>x.id===id);if(!h||h.done)return;h.submitted=true;save();toast('¡Mamá puede revisar si ya la adelantaste!')}
+function approveHomework(id){let h=data.homework.find(x=>x.id===id);if(!h||h.done)return;h.done=true;data.specialStars+=h.stars;data.totalEarned+=h.stars;data.weekEarned+=h.stars;save();toast('¡Adelanto aprobado! Estrellas especiales ganadas.')}
+function deleteHomework(id){data.homework=data.homework.filter(x=>x.id!==id);save()}
+function resetDay(){if(!confirm('¿Reiniciar las misiones principales de hoy? Se conservará el monedero especial y las recompensas.'))return;data.stars=0;data.redeemed=[];let first=true;data.tasks.filter(t=>t.type!=='special').forEach(t=>{t.status=first?'ready':'locked';t.photo='';t.note='';first=false});data.tasks.filter(t=>t.type==='special'&&t.status!=='approved').forEach(t=>{t.status='ready';t.photo='';t.note=''});save();toast('Rutina diaria reiniciada. El monedero especial se conserva.')}
+function exportData(){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='rutina-alizee-copia.json';a.click();URL.revokeObjectURL(a.href);toast('Copia descargada.')}
+if(data.day!==new Date().toLocaleDateString('es-BO')){data.day=new Date().toLocaleDateString('es-BO');data.stars=0;let first=true;data.tasks.filter(t=>t.type!=='special').forEach(t=>{t.status=first?'ready':'locked';t.photo='';t.note='';first=false});data.redeemed=[];try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}}
+render();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => { navigator.serviceWorker.register("./sw.js").catch(err => console.warn("No se pudo registrar el modo instalable:", err)); });
+}
+</script>
+</body>
+</html>

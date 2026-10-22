@@ -1,0 +1,12 @@
+MI AVENTURA DIARIA DE ALIZEE — ARCHIVOS PARA GITHUB PAGES
+
+Sube TODOS los archivos y carpetas de este paquete al repositorio de GitHub.
+La página principal es index.html. No subas únicamente el HTML original.
+
+Archivos incluidos:
+- index.html: aplicación conectada a Firebase
+- manifest.json: datos de instalación
+- sw.js: caché básica para que se pueda abrir como PWA
+- icons/: iconos de la aplicación
+
+La sincronización con Firebase necesita conexión a Internet. El modo instalable no significa que la sincronización funcione sin conexión.
